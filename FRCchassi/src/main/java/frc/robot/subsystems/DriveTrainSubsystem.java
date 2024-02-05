@@ -8,19 +8,11 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import edu.wpi.first.wpilibj.drive.RobotDriveBase.MotorType;
-//import edu.wpi.first.wpilibj.motorcontrol.MotorController;
-//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
-//import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
 import frc.robot.Constants.OperatorConstants;
 
-
-
 public class DriveTrainSubsystem extends SubsystemBase{
-
 
     CANSparkMax frontLeft = new CANSparkMax(OperatorConstants.frontLeft, MotorType.kBrushed);
     CANSparkMax frontRight = new CANSparkMax(OperatorConstants.frontRight, MotorType.kBrushed);
@@ -36,24 +28,12 @@ public class DriveTrainSubsystem extends SubsystemBase{
     public static double calc(XboxController m_driverController, double speed, double freio, double acelerador){
         double ttspeed = (speed-(freio/5))+(acelerador/5);
         return ttspeed; 
-
     
     }
 
-
-
-
-
-    //MotorControllerGroup leftMotors;
-    //MotorControllerGroup rightMotors;
-    //Double rightMotors;
-    //Double leftMotors;
-
     public DriveTrainSubsystem(){
-        // frontLeft.setIdleMode(IdleMode.kBrake);
 
      backLeft.follow(frontLeft);
-        //drive = new DifferentialDrive(leftMotors, rightMotors);
 
     }
     
