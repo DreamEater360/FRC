@@ -25,12 +25,14 @@ public class DriveTrainSubsystem extends SubsystemBase{
     double speed;
     double freio;
     double acelerador;
+    double autoSpeed;
+    double targetTime;
+    double time;
 
     //Calcula a velocidade que o robô tem
-    public static double calc(XboxController m_driverController, double speed, double freio, double acelerador){
+    public static double calcTeleop(XboxController m_driverController, double speed, double freio, double acelerador){
         double ttspeed = (speed-(freio/5))+(acelerador/5);
         return ttspeed; 
-    
     }
 
     //Manda os motores de trás seguir os movimentos dos da frente
@@ -76,10 +78,13 @@ public class DriveTrainSubsystem extends SubsystemBase{
     @Override
     public void periodic(){
        
-        SmartDashboard.getNumber(getName(), DriveTrainSubsystem.calc(RobotContainer.m_driverController, 0.7, RobotContainer.m_driverController.getLeftTriggerAxis(), 
+        SmartDashboard.getNumber(getName(), DriveTrainSubsystem.calcTeleop(RobotContainer.m_driverController, 0.7, RobotContainer.m_driverController.getLeftTriggerAxis(), 
         RobotContainer.m_driverController.getRightTriggerAxis()));
     }
 
-    
+    public boolean condition() {
+        return false;
+    }
+
 
 }
