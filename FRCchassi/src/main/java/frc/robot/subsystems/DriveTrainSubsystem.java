@@ -36,8 +36,8 @@ public class DriveTrainSubsystem extends SubsystemBase{
     //Manda os motores de trás seguir os movimentos dos da frente
     public DriveTrainSubsystem(){
     
-    backRight.follow(frontRight);
-    backLeft.follow(frontLeft);
+        backRight.follow(frontRight);
+        backLeft.follow(frontLeft);
 
     }
     
@@ -79,5 +79,7 @@ public class DriveTrainSubsystem extends SubsystemBase{
         SmartDashboard.getNumber(getName(), DriveTrainSubsystem.calc(RobotContainer.m_driverController, 0.7, RobotContainer.m_driverController.getLeftTriggerAxis(), 
         RobotContainer.m_driverController.getRightTriggerAxis()));
     }
+
+    
 
 }
