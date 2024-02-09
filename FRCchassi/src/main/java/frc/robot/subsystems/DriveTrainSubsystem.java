@@ -27,7 +27,7 @@ public class DriveTrainSubsystem extends SubsystemBase{
     double acelerador;
 
     //Calcula a velocidade que o robô tem
-    public static double calc(XboxController m_driverController, double speed, double freio, double acelerador){
+    public static double calc(XboxController m_firstPilotController, double speed, double freio, double acelerador){
         double ttspeed = (speed-(freio/5))+(acelerador/5);
         return ttspeed; 
     
@@ -42,14 +42,14 @@ public class DriveTrainSubsystem extends SubsystemBase{
     }
     
     //Pega os valores obtidos no joystick e calcula o movimento do robô
-    public void driveWithJoystick(XboxController m_driverController, double speed){
-        drive.arcadeDrive(-(m_driverController.getRawAxis(4)*speed), -(m_driverController.getRawAxis(1)*speed));
+    public void driveWithJoystick(XboxController m_firstPilotController, double speed){
+        drive.arcadeDrive(-(m_firstPilotController.getRawAxis(4)*speed), -(m_firstPilotController.getRawAxis(1)*speed));
         this.speed = speed;    
     }
 
     //Organiza o sentido dos motores no movimentos (Frente)
     public void driveFoward(double speed){
-    drive.tankDrive(speed, -speed);
+        drive.tankDrive(speed, -speed);
     }
 
     //Organiza o sentido dos motores no movimentos (Trás)
@@ -76,8 +76,9 @@ public class DriveTrainSubsystem extends SubsystemBase{
     @Override
     public void periodic(){
        
-        SmartDashboard.getNumber(getName(), DriveTrainSubsystem.calc(RobotContainer.m_driverController, 0.7, RobotContainer.m_driverController.getLeftTriggerAxis(), 
-        RobotContainer.m_driverController.getRightTriggerAxis()));
+        SmartDashboard.getNumber(getName(), DriveTrainSubsystem.calc(RobotContainer.m_firstPilotController,
+         0.7, RobotContainer.m_firstPilotController.getLeftTriggerAxis(), 
+        RobotContainer.m_firstPilotController.getRightTriggerAxis()));
     }
 
     

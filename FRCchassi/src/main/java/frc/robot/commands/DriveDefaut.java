@@ -23,8 +23,8 @@ public class DriveDefaut extends Command {
   //
   @Override
   public void execute() {
-    m_drive.driveWithJoystick(RobotContainer.m_driverController, DriveTrainSubsystem.calc(RobotContainer.m_driverController, 0.7, RobotContainer.m_driverController.getLeftTriggerAxis(), 
-    RobotContainer.m_driverController.getRightTriggerAxis()));
+    m_drive.driveWithJoystick(RobotContainer.m_firstPilotController, DriveTrainSubsystem.calc(RobotContainer.m_firstPilotController, 0.7, RobotContainer.m_firstPilotController.getLeftTriggerAxis(), 
+    RobotContainer.m_firstPilotController.getRightTriggerAxis()));
   }
 
   @Override
