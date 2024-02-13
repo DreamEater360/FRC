@@ -74,12 +74,7 @@ public class DriveTrainSubsystem extends SubsystemBase{
 
     //Ciclo de repetição
     @Override
-    public void periodic(){
-       
-        SmartDashboard.getNumber(getName(), DriveTrainSubsystem.calc(RobotContainer.m_firstPilotController,
-         0.7, RobotContainer.m_firstPilotController.getLeftTriggerAxis(), 
-        RobotContainer.m_firstPilotController.getRightTriggerAxis()));
-    }
+    public void periodic(){}
 
     
 
