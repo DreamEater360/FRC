@@ -2,15 +2,14 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.CollectorSubsystem;
+import frc.robot.subsystems.LauncherSubsystem;
 
-public class collectorCommand extends Command{
+public class LauncherCommand extends Command{
+    public final LauncherSubsystem m_launcher;
 
-  public final CollectorSubsystem m_collector;
-
-  public collectorCommand(CollectorSubsystem m_collector) {
-  this.m_collector = m_collector;
-  addRequirements(m_collector);
+  public LauncherCommand(LauncherSubsystem m_launcher) {
+  this.m_launcher = m_launcher;
+  addRequirements(m_launcher);
   }
 
   @Override
@@ -20,7 +19,7 @@ public class collectorCommand extends Command{
 
   @Override
   public void execute() {
-    m_collector.playWithJoystick(RobotContainer.m_secundPilotController, 0.5);
+    m_launcher.launcherWithJoystick(RobotContainer.m_secundPilotController, 1);
   }
 
   @Override
@@ -32,3 +31,4 @@ public class collectorCommand extends Command{
   }
 
 }
+

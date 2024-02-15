@@ -2,19 +2,23 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.DriveDefaut;
+import frc.robot.commands.LauncherCommand;
 import frc.robot.commands.collectorCommand;
+import frc.robot.subsystems.CollectorSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
-import frc.robot.subsystems.collector;
+import frc.robot.subsystems.LauncherSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj2.command.Command;
 
 public class RobotContainer {
 
   public static final DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
   public static final DriveDefaut DRIVE_DEFAUT = new DriveDefaut(driveTrain);
-  public static final collector coletor = new collector();
-  public static final collectorCommand COLLECTOR = new collectorCommand(coletor);
+  public static final CollectorSubsystem coletor = new CollectorSubsystem();
+  public static final collectorCommand COLLETOR = new collectorCommand(coletor);
+  public static final LauncherSubsystem lancador = new LauncherSubsystem();
+  public static final LauncherCommand LANCADOR = new LauncherCommand(lancador);
 
+  
   public static final XboxController m_firstPilotController =
     new XboxController(OperatorConstants.firstPilot);
   public static final XboxController m_secundPilotController =
@@ -22,8 +26,11 @@ public class RobotContainer {
   
   public RobotContainer() {
     DRIVE_DEFAUT.addRequirements(driveTrain);
-    COLLECTOR.addRequirements(coletor);
+    COLLETOR.addRequirements(coletor);
+    LANCADOR.addRequirements(lancador);
     driveTrain.setDefaultCommand(DRIVE_DEFAUT);
+    coletor.setDefaultCommand(COLLETOR);
+    lancador.setDefaultCommand(LANCADOR);
 
   }
 
@@ -36,9 +43,7 @@ public class RobotContainer {
     return DRIVE_DEFAUT;
   }
 
-  public static collector getColetor() {
-    return coletor;
-  }
+  
 
   public static XboxController getmFirstpilotcontroller() {
     return m_firstPilotController;
