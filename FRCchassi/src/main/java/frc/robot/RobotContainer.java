@@ -8,6 +8,8 @@ import frc.robot.subsystems.CollectorSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.LauncherSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.Command;
+
 
 public class RobotContainer {
 
@@ -53,9 +55,9 @@ public class RobotContainer {
     return m_secundPilotController;
   }
 
-  // public Command getAutonomousCommand() {
+  public Command getAutonomousCommand() {
 
-  //   return AutoCommand.logicAuto(driveTrain);
+    return null;
     
-  // } 
+  } 
 }
