@@ -4,9 +4,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.RobotContainer;
 import frc.robot.Constants.OperatorConstants;
 
 //Declara classe que comanda a movimentação do chassi
@@ -25,14 +23,12 @@ public class DriveTrainSubsystem extends SubsystemBase{
     double speed;
     double freio;
     double acelerador;
-    double autoSpeed;
-    double targetTime;
-    double time;
 
     //Calcula a velocidade que o robô tem
-    public static double calcTeleop(XboxController m_driverController, double speed, double freio, double acelerador){
+    public static double calc(XboxController m_firstPilotController, double speed, double freio, double acelerador){
         double ttspeed = (speed-(freio/5))+(acelerador/5);
         return ttspeed; 
+    
     }
 
     //Manda os motores de trás seguir os movimentos dos da frente
@@ -44,14 +40,14 @@ public class DriveTrainSubsystem extends SubsystemBase{
     }
     
     //Pega os valores obtidos no joystick e calcula o movimento do robô
-    public void driveWithJoystick(XboxController m_driverController, double speed){
-        drive.arcadeDrive(-(m_driverController.getRawAxis(4)*speed), -(m_driverController.getRawAxis(1)*speed));
+    public void driveWithJoystick(XboxController m_firstPilotController, double speed){
+        drive.arcadeDrive(-(m_firstPilotController.getRawAxis(4)*speed), -(m_firstPilotController.getRawAxis(1)*speed));
         this.speed = speed;    
     }
 
     //Organiza o sentido dos motores no movimentos (Frente)
     public void driveFoward(double speed){
-    drive.tankDrive(speed, -speed);
+        drive.tankDrive(speed, -speed);
     }
 
     //Organiza o sentido dos motores no movimentos (Trás)
@@ -76,15 +72,8 @@ public class DriveTrainSubsystem extends SubsystemBase{
 
     //Ciclo de repetição
     @Override
-    public void periodic(){
-       
-        SmartDashboard.getNumber(getName(), DriveTrainSubsystem.calcTeleop(RobotContainer.m_driverController, 0.7, RobotContainer.m_driverController.getLeftTriggerAxis(), 
-        RobotContainer.m_driverController.getRightTriggerAxis()));
-    }
+    public void periodic(){}
 
-    public boolean condition() {
-        return false;
-    }
-
+    
 
 }
