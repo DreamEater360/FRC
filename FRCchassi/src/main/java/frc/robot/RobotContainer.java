@@ -39,18 +39,24 @@ public class RobotContainer {
   public static DriveTrainSubsystem getDrivetrain() {
     return driveTrain;
   }
-
-
   public static DriveDefaut getDriveDefaut() {
     return DRIVE_DEFAUT;
   }
-
-  
-
+  public static CollectorSubsystem getColetor(){
+    return coletor;
+  }
+  public static collectorCommand getCOLLETOR(){
+    return COLLETOR;
+  }
+  public static LauncherSubsystem getLauncher(){
+    return lancador;
+  }
+  public static LauncherCommand getLANCADOR(){
+    return LANCADOR;
+  }
   public static XboxController getmFirstpilotcontroller() {
     return m_firstPilotController;
   }
-
   public static XboxController getmSecundpilotcontroller() {
     return m_secundPilotController;
   }

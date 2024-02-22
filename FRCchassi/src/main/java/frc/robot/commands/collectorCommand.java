@@ -20,7 +20,7 @@ public class collectorCommand extends Command{
 
   @Override
   public void execute() {
-    // m_collector.playWithJoystick(RobotContainer.m_secundPilotController, 0.5);
+    m_collector.playWithJoystick(RobotContainer.m_secundPilotController, 1);
   }
 
   @Override

@@ -11,10 +11,10 @@ public final class Constants {
     public static final int backLeft = 2;
     public static final int backRight = 1;
     // declara constantes do coletor
-    public static final int colMotorForward = 2;
-    public static final int colMotorReverse = 4;
+    public static final int colMotorForward = 7;
+    public static final int colMotorReverse = 6;
     // declara constantes do lançador
-    public static final int launcherLeft = 1;
-    public static final int launcherRight = 3;
+    public static final int launcherLeft = 5;
+    public static final int launcherRight = 8;
   }
 }

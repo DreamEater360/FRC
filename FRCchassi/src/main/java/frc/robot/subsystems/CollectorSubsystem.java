@@ -10,7 +10,7 @@ import frc.robot.Constants.OperatorConstants;
 public class CollectorSubsystem extends SubsystemBase{
     
 // declarar motores
-    CANSparkMax colMotorForward = new CANSparkMax(OperatorConstants.colMotorForward, MotorType.kBrushed);
+    CANSparkMax colMotorForward = new CANSparkMax(OperatorConstants.colMotorForward, MotorType.kBrushless);
     CANSparkMax colMotorReverse = new CANSparkMax(OperatorConstants.colMotorReverse, MotorType.kBrushed);
 
     DifferentialDrive collect = new DifferentialDrive(colMotorForward, colMotorReverse);

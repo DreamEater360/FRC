@@ -17,7 +17,7 @@ public class LauncherSubsystem extends SubsystemBase{
     double launcherSpeed;
 
     public void launcherWithJoystick(XboxController m_secundPilotController, double launcherSpeed){
-        launcher.arcadeDrive(m_secundPilotController.getRawAxis(4)*launcherSpeed, m_secundPilotController.getRawAxis(1)*launcherSpeed);
+        launcher.arcadeDrive(m_secundPilotController.getRawAxis(4)*launcherSpeed, m_secundPilotController.getRawAxis(4)*launcherSpeed);
         this.launcherSpeed = launcherSpeed;
     }
 

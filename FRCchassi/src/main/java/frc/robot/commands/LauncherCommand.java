@@ -14,7 +14,7 @@ public class LauncherCommand extends Command{
 
   @Override
   public void initialize() {
-    RobotContainer.coletor.stop();
+    RobotContainer.lancador.stop();
   }
 
   @Override
