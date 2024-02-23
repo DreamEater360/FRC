@@ -17,14 +17,13 @@ public class LauncherSubsystem extends SubsystemBase{
     double launcherSpeed;
 
     public void launcherWithJoystick(XboxController m_secundPilotController, double launcherSpeed){
-        launcher.arcadeDrive(m_secundPilotController.getRawAxis(4)*launcherSpeed, m_secundPilotController.getRawAxis(4)*launcherSpeed);
+        launcher.arcadeDrive(-m_secundPilotController.getRawAxis(5)*launcherSpeed, 0);
         this.launcherSpeed = launcherSpeed;
-    }
+        launcher.tankDrive(m_secundPilotController.getRawAxis(5)*(-launcherSpeed),
+        m_secundPilotController.getRawAxis(5)*launcherSpeed);
 
-    public void driveLauncher(double launcherSpeed){
-        launcher.tankDrive(launcherSpeed, -launcherSpeed);
     }
-
+     
     public void stop(){
         launcher.stopMotor();
     }

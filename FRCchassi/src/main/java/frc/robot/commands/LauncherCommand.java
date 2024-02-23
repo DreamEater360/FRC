@@ -19,7 +19,7 @@ public class LauncherCommand extends Command{
 
   @Override
   public void execute() {
-    m_launcher.launcherWithJoystick(RobotContainer.m_secundPilotController, 1);
+    m_launcher.launcherWithJoystick(RobotContainer.m_secundPilotController, 2);
   }
 
   @Override

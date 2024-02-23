@@ -20,19 +20,11 @@ public class CollectorSubsystem extends SubsystemBase{
 
 //Pega os valores obtidos no joystick e calcula o movimento do robô
     public void playWithJoystick(XboxController m_secundPilotController, double colSpeed){
-        collect.arcadeDrive((m_secundPilotController.getRawAxis(1)*colSpeed), -(m_secundPilotController.getRawAxis(1)*colSpeed));
+        collect.arcadeDrive(-(m_secundPilotController.getRawAxis(1)*colSpeed), 0);
         this.colSpeed = colSpeed;
+        collect.tankDrive(m_secundPilotController.getRawAxis(1)*(-colSpeed),
+        m_secundPilotController.getRawAxis(1)*colSpeed);
 }
-
-//Organiza o sentido dos motores no movimentos (Frente)
-     public void driveFoward(double speed){
-        collect.tankDrive(speed, -speed);
-    }
-
-//Organiza o sentido dos motores no movimentos (Trás)
-    public void driveBackwards(double speed){
-        collect.tankDrive(speed, -speed);
-    }
 
     //Para os motores quando o joystick fica neutro
     public void stop(){
