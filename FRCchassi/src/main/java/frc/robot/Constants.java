@@ -16,5 +16,8 @@ public final class Constants {
     // declara constantes do lançador
     public static final int launcherLeft = 5;
     public static final int launcherRight = 8;
+    // declara constantes do gancho
+    public static final int hookMotorLeft = 9;
+    public static final int hookMotorRight = 10;
   }
 }

@@ -2,10 +2,12 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.DriveDefaut;
+import frc.robot.commands.HookCommand;
 import frc.robot.commands.LauncherCommand;
 import frc.robot.commands.collectorCommand;
 import frc.robot.subsystems.CollectorSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
+import frc.robot.subsystems.HookSubsystem;
 import frc.robot.subsystems.LauncherSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -19,6 +21,8 @@ public class RobotContainer {
   public static final collectorCommand COLLETOR = new collectorCommand(coletor);
   public static final LauncherSubsystem lancador = new LauncherSubsystem();
   public static final LauncherCommand LANCADOR = new LauncherCommand(lancador);
+  public static final HookSubsystem gancho = new HookSubsystem();
+  public static final HookCommand GANCHO = new HookCommand(gancho);
 
   
   public static final XboxController m_firstPilotController =
@@ -30,9 +34,11 @@ public class RobotContainer {
     DRIVE_DEFAUT.addRequirements(driveTrain);
     COLLETOR.addRequirements(coletor);
     LANCADOR.addRequirements(lancador);
+    GANCHO.addRequirements(gancho);
     driveTrain.setDefaultCommand(DRIVE_DEFAUT);
     coletor.setDefaultCommand(COLLETOR);
     lancador.setDefaultCommand(LANCADOR);
+    gancho.setDefaultCommand(GANCHO);
 
   }
 
@@ -53,6 +59,12 @@ public class RobotContainer {
   }
   public static LauncherCommand getLANCADOR(){
     return LANCADOR;
+  }
+  public static HookSubsystem getHook(){
+    return gancho;
+  }
+  public static HookCommand getHOOK(){
+    return GANCHO;
   }
   public static XboxController getmFirstpilotcontroller() {
     return m_firstPilotController;

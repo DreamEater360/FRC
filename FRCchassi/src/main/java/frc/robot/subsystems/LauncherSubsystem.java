@@ -16,6 +16,13 @@ public class LauncherSubsystem extends SubsystemBase{
 
     double launcherSpeed;
 
+    //Calcula a velocidade que o robô tem
+    public static double calcLauncher(XboxController m_secundPiloController, double launcherSpeed){
+        double ttspeed = (launcherSpeed/3);
+        return ttspeed; 
+    
+    }
+    //Pega os valores obtidos no joystick e calcula o movimento do robô
     public void launcherWithJoystick(XboxController m_secundPilotController, double launcherSpeed){
         launcher.arcadeDrive(-m_secundPilotController.getRawAxis(5)*launcherSpeed, 0);
         this.launcherSpeed = launcherSpeed;
@@ -23,7 +30,7 @@ public class LauncherSubsystem extends SubsystemBase{
         m_secundPilotController.getRawAxis(5)*launcherSpeed);
 
     }
-     
+   //Para os motores quando o joystick fica neutro     
     public void stop(){
         launcher.stopMotor();
     }
