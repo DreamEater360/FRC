@@ -1,3 +1,4 @@
+// importa as bibliotecas necessarias
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
@@ -19,7 +20,7 @@ public class HookSubsystem extends SubsystemBase{
 // declarar velocidade do gancho
     double hookSpeed;
 
-//Pega os valores obtidos no joystick e calcula o movimento do robô
+//Pega os valores obtidos no joystick e calcula o movimento do gancho
     public void hookWithJoystick(XboxController m_secundPilotController, double hookSpeed){
         hook.arcadeDrive(-RobotContainer.m_firstPilotController.getLeftTriggerAxis()*hookSpeed, 
         RobotContainer.m_firstPilotController.getRightTriggerAxis()*hookSpeed);

@@ -1,3 +1,4 @@
+// importa as bibliotecas necessarias
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
@@ -12,7 +13,7 @@ import frc.robot.subsystems.LauncherSubsystem;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 
-
+// classe principal que faz todos os sistemas rodarem
 public class RobotContainer {
 
   public static final DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();

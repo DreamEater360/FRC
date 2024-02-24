@@ -1,10 +1,11 @@
+// importa as bibliotecas necessarias
 package frc.robot.commands;
 
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
-//Declara a classe principal que executa todos os metodos; "Central de controle"; Main
+//Declara a classe principal que executa todos os metodos do chassi
 public class DriveDefaut extends Command {
     private final DriveTrainSubsystem m_drive;
 
@@ -14,13 +15,13 @@ public class DriveDefaut extends Command {
     addRequirements(m_drive);
   }
 
-  //Manda os motores robô parararem quando liga
+  //Manda os motores do chassi parararem quando liga
   @Override
   public void initialize() {
     RobotContainer.driveTrain.stop();
   }
 
-  //
+  //Onde é executado o subsistema do chassi
   @Override
   public void execute() {
     m_drive.driveWithJoystick(RobotContainer.m_firstPilotController, 
