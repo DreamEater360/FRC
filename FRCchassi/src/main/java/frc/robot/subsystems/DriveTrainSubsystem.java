@@ -7,9 +7,13 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.OperatorConstants;
+import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.wpilibj.SerialPort;;
 
 //Declara classe que comanda a movimentação do chassi
 public class DriveTrainSubsystem extends SubsystemBase{
+
+    AHRS navx = new AHRS(SerialPort.Port.kMXP);
 
     //Declara motores
     CANSparkMax frontLeft = new CANSparkMax(OperatorConstants.frontLeft, MotorType.kBrushed);
