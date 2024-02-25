@@ -2,6 +2,8 @@ package frc.robot.subsystems;
 
 import com.revrobotics.RelativeEncoder;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.wpilibj.SerialPort.Port;;
 
 public class AutoSubsystem extends SubsystemBase{
     //declara o encoder do NEO
@@ -9,7 +11,7 @@ public class AutoSubsystem extends SubsystemBase{
 
     //declara o IMU
 
-
+    AHRS navX = new AHRS(Port.kMXP);
 
     //declara os objetos subsistemas
     private final DriveTrainSubsystem driveTrainSubsystem;
