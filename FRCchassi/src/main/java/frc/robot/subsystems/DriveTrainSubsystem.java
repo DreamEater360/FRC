@@ -34,8 +34,8 @@ public class DriveTrainSubsystem extends SubsystemBase{
     //Manda os motores de trás seguir os movimentos dos da frente
     public DriveTrainSubsystem(){
     
-        backRight.follow(frontRight);
-        backLeft.follow(frontLeft);
+        // backRight.follow(frontRight);
+        // backLeft.follow(frontLeft);
 
     }
     

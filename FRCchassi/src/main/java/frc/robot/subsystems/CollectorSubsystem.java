@@ -22,7 +22,7 @@ public class CollectorSubsystem extends SubsystemBase{
     public void playWithJoystick(XboxController m_secundPilotController, double colSpeed){
         collect.arcadeDrive(-(m_secundPilotController.getRawAxis(1)*colSpeed), 0);
         this.colSpeed = colSpeed;
-        collect.tankDrive(m_secundPilotController.getRawAxis(1)*(-colSpeed),
+        collect.tankDrive(m_secundPilotController.getRawAxis(1)*(colSpeed),
         m_secundPilotController.getRawAxis(1)*colSpeed);
 }
 
