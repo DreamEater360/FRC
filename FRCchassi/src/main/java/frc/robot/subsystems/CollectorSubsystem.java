@@ -1,3 +1,4 @@
+// importa as bibliotecas necessarias
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
@@ -18,7 +19,7 @@ public class CollectorSubsystem extends SubsystemBase{
 // declarar velocidade do coletor
     double colSpeed;
 
-//Pega os valores obtidos no joystick e calcula o movimento do robô
+//Pega os valores obtidos no joystick e calcula o movimento do coletor
     public void playWithJoystick(XboxController m_secundPilotController, double colSpeed){
         collect.arcadeDrive(-(m_secundPilotController.getRawAxis(1)*colSpeed), 0);
         this.colSpeed = colSpeed;
